@@ -1,0 +1,22 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #00010b;
+}
+.hero{
+    background: url(../src/assets/Hero-bg.png);
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+}
+.footer{
+    background: url(../src/assets/Hero-bg.png);
+    width: 100%;
+    background-size: cover;
+}
+@media only screen and (min-width:768px) and (max-width : 1024px){
+    .hero{
+        height: 60vh;
+    }
+}
