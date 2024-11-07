@@ -4,15 +4,15 @@
 
 @font-face {
     font-family: "Hovesbold";
-    src: url(../public/fonts/TT\ Hoves\ Pro\ Trial\ Expanded\ ExtraBold.ttf);
+    src: url(/fonts/TT\ Hoves\ Pro\ Trial\ Expanded\ ExtraBold.ttf);
 }
 @font-face {
     font-family: "Hoves-reg";
-    src: url(../public/fonts/TT\ Hoves\ Pro\ Trial\ Expanded\ Regular.ttf);
+    src: url(/fonts/TT\ Hoves\ Pro\ Trial\ Expanded\ Regular.ttf);
 }
 @font-face {
     font-family: "Hoves-light";
-    src: url(../public/fonts/TT\ Hoves\ Pro\ Trial\ Expanded\ Light.ttf);
+    src: url(/fonts/TT\ Hoves\ Pro\ Trial\ Expanded\ Light.ttf);
 }
 
 .bold{
