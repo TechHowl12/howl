@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import placeHolder from "../assets/placeHolder.png";
+import placeHolder from "../assets/placeholder-image.png";
 
 export const Review = () => {
   const [currentIndex, setCurrentIndex] = useState(0);

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Logo from "../assets/Logo-nav.png";
+import Logo from "../assets/logo-nav.png";
 
 export const Header = () => {
   // State to manage mobile menu visibility

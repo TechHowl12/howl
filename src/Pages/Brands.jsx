@@ -1,10 +1,10 @@
 import React, { useEffect, useRef } from "react";
-import HRX from "../assets/HRX.png";
-import Amex from "../assets/AMEX.png";
-import Schindler from "../assets/Schindler.png";
-import HRXMobile from "../assets/HRX-Mobile.png";
-import AmexMobile from "../assets/Amex-Mobile.png";
-import SchindluMobile from "../assets/Schindlu-Mobile.png";
+import HRX from "../assets/hrx-image.png";
+import Amex from "../assets/amex.png";
+import Schindler from "../assets/schindler.png";
+import HRXMobile from "../assets/hrx-mobile.png";
+import AmexMobile from "../assets/amex-mobile.png";
+import SchindluMobile from "../assets/schindler-mobile.png";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
