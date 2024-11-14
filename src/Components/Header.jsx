@@ -66,7 +66,7 @@ export const Header = () => {
                       hoveredLink === link.name
                         ? "scale-x-110"
                         : hoveredLink
-                        ? "blur-sm"
+                        ? "opacity-30"
                         : ""
                     }`}
                   >
