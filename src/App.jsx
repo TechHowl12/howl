@@ -7,12 +7,18 @@ import { Form } from './Pages/Form'
 import { Hero } from './Pages/Hero'
 import { Review } from './Pages/Review'
 import { Solutions } from './Pages/Solutions'
-import { Twins } from './Pages/Twins'
+import { Twins } from './Pages/Twins';
+import LocomotiveScroll from 'locomotive-scroll';
 
 function App() {
 
+  const scroll = new LocomotiveScroll({
+    el: document.querySelector('[data-scroll-container]'),
+    smooth: true
+});
+
   return (
-    <>
+    <div >
      <Header/>
      <Hero/>
      <Brands/>
@@ -22,7 +28,7 @@ function App() {
      <Review/>
      <Form/>
      <Footer/>
-    </>
+    </div>
   )
 }
 

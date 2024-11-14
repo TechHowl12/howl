@@ -22,7 +22,7 @@ const Footer = () => {
         <div className='flex flex-col sm:flex-row items-end justify-between px-10 sm:px-0 mt-10 gap-y-10 sm:gap-x-10 lg:gap-x-16 2xl:gap-x-28'>
             <div className='w-full sm:w-1/2 sm:order-2 sm:mt-10 sm:mb-7'>
                 <p className='text-sm reg flex'>Get updates for startup news and trends</p>
-                <input type='text' className='w-full  py-3 pl-4 mt-2 bg-transparent rounded-lg border-2 border-white' placeholder='Email'/>
+                <input type='text' className='w-full  py-3 pl-4 mt-2 bg-transparent rounded-lg border-2 border-white placeholder-white' placeholder='Email'/>
             </div>
             <div className='sm:w-1/2'>
             <img src={Logo} className='w-full'/>

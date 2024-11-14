@@ -24,24 +24,13 @@ export const Review = () => {
 
   return (
     <div className="w-full py-20">
+        <div className="h-96 flex justify-center items-center flex-col">
         <div className="text-white w-10/12 lg:w-1/2 mx-auto">
-        {/* <button
-            onClick={handlePrevious}
-            className="text-5xl"
-          >
-            {"<"}
-          </button> */}
         <p className="text-white text-center reg italic text-lg sm:text-2xl mb-6">{reviews[currentIndex]}</p>
         <p className="text-center reg text-white mt-14">Apurva Harwani</p>
         <p className="light uppercase text-center text-xs mt-2">senior marketing manager | niyo solutions</p>
-        {/* <button
-            onClick={handleNext}
-            className="text-5xl"
-          >
-            {">"}
-          </button> */}
         </div>
-        <div className="flex justify-center space-x-2 mt-4">
+        <div className="flex justify-center items-center space-x-2 mt-4">
           {reviews.map((_, index) => (
             <button
               key={index}
@@ -51,6 +40,7 @@ export const Review = () => {
               }`}
             />
           ))}
+        </div>
         </div>
         <img className="mx-auto px-8 xl:px-0 mt-10" src={placeHolder}/>
       </div>
