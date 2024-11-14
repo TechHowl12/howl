@@ -1,6 +1,6 @@
 import React from "react";
 import TrueBlue from "../assets/TrueBlue.png";
-import APD from "../assets/APD.png";
+// import APD from "../assets/APD.png";
 import Gluta from "../assets/Gluta.png";
 import Baggit from "../assets/Baggit.png";
 import DBS from "../assets/DBS.png";
@@ -15,7 +15,7 @@ import Amex from "../assets/Amex.png";
 const imageData = [
   { src: Sachin, title: "38% Uptick in Positive Brand Sentiment"},
   { src: HRX, title: "HRX", },
-  { src: APD, title: "APD"},
+  { src: Amazon, title: "Amazon"},
   { src: Baggit, title: "Baggit"},
   { src: Gluta, title: "Gluta"},
   { src: Schindler, title: "Schindler"},
