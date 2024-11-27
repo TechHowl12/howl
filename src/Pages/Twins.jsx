@@ -19,7 +19,7 @@ export const Twins = () => {
 
   useEffect(() => {
     // Function to animate numbers
-    const animateNumber = (ref, target) => {
+    const animateNumber = (ref, target, prefix = "") => {
       gsap.to(ref.current, {
         innerText: target,
         duration: 2,
@@ -27,24 +27,24 @@ export const Twins = () => {
         snap: { innerText: 1 }, // Snap the innerText to integers
         scrollTrigger: {
           trigger: ref.current,
-          start: "top 90%", // When the top of the element reaches 80% of the viewport height
+          start: "top 90%", // When the top of the element reaches 90% of the viewport height
           toggleActions: "play none none none",
         },
         onUpdate: () => {
-          ref.current.innerText = Math.floor(ref.current.innerText);
+          ref.current.innerText = `${Math.floor(ref.current.innerText)}${prefix}`;
         },
       });
     };
 
     // Animate desktop numbers
-    animateNumber(brandsLaunchedRefDesktop, 123);
-    animateNumber(revenueCreatedRefDesktop, 456);
-    animateNumber(customersReachedRefDesktop, 789);
+    animateNumber(brandsLaunchedRefDesktop, 100,"+");
+    animateNumber(revenueCreatedRefDesktop, 50,"+");
+    animateNumber(customersReachedRefDesktop, 50, "cr+");
 
     // Animate mobile numbers
-    animateNumber(brandsLaunchedRefMobile, 123);
-    animateNumber(revenueCreatedRefMobile, 456);
-    animateNumber(customersReachedRefMobile, 789);
+    animateNumber(brandsLaunchedRefMobile, 100,"+");
+    animateNumber(revenueCreatedRefMobile, 50,"+");
+    animateNumber(customersReachedRefMobile, 50, "cr+");
 
     // Cleanup on unmount
     return () => {
@@ -54,7 +54,7 @@ export const Twins = () => {
 
   return (
     <div className="bg-[#FCF5FF]">
-      <div className="bg-[#FCF5FF] w-10/12 mx-auto pt-[2%] pb-12 relative">
+      <div className="bg-[#FCF5FF] w-11/12 mx-auto pt-[2%] pb-12 relative">
         <div className="flex flex-col sm:flex-row justify-between mt-10">
           <div className="w-full sm:w-6/12">
             <h1 className="xl:text-2xl sm:text-lg uppercase text-[#3D155D] reg">
@@ -81,23 +81,23 @@ export const Twins = () => {
 
             {/* Div with statistics for Desktop */}
             <div className="hidden sm:block sm:mt-10 xl:absolute bottom-0 mb-12 left-0 w-full 2xl:w-1/2">
-              <div className="text-[#3D155D] flex justify-between items-center pb-4 pr-4 border-b-2 border-[#3D155D] w-full 2xl:w-1/2">
-                <h1 className="bold text-5xl" ref={brandsLaunchedRefDesktop}>
+              <div className="text-[#3D155D] flex justify-between items-center pb-4 sm:pr-1 lg:pr-4 border-b-2 border-[#3D155D] w-full 2xl:w-1/2">
+                <h1 className="bold sm:text-4xl lg:text-5xl" ref={brandsLaunchedRefDesktop}>
                   0
                 </h1>
-                <h1 className="text-lg reg">Brands Launched</h1>
+                <h1 className="text-lg reg">Clients Serviced</h1>
               </div>
-              <div className="text-[#3D155D] flex justify-between items-center pb-4 pr-4 border-b-2 border-[#3D155D] w-full 2xl:w-1/2 mt-6">
-                <h1 className="bold text-5xl" ref={revenueCreatedRefDesktop}>
+              <div className="text-[#3D155D] flex justify-between items-center pb-4 sm:pr-1 lg:pr-4 border-b-2 border-[#3D155D] w-full 2xl:w-1/2 mt-6">
+                <h1 className="bold sm:text-4xl lg:text-5xl" ref={revenueCreatedRefDesktop}>
                   0
                 </h1>
-                <h1 className="text-lg reg">Revenue Created</h1>
+                <h1 className="text-lg reg">Individual & Team Awards</h1>
               </div>
-              <div className="text-[#3D155D] flex justify-between items-center pb-4 pr-4 w-full 2xl:w-1/2 mt-6">
-                <h1 className="bold text-5xl" ref={customersReachedRefDesktop}>
+              <div className="text-[#3D155D] flex justify-between items-center pb-4 sm:pr-1 lg:pr-4 w-full 2xl:w-1/2 mt-6">
+                <h1 className="bold sm:text-4xl lg:text-5xl" ref={customersReachedRefDesktop}>
                   0
                 </h1>
-                <h1 className="text-lg reg">Customers Reached</h1>
+                <h1 className="text-lg reg">Revenue Generated for Clients</h1>
               </div>
             </div>
           </div>
@@ -108,22 +108,22 @@ export const Twins = () => {
         {/* Div with statistics for Mobile */}
         <div className="block sm:hidden w-full mt-10">
           <div className="text-[#3D155D] flex justify-between items-center pb-4 pr-4 border-b-2 border-[#3D155D]">
-            <h1 className="bold text-5xl" ref={brandsLaunchedRefMobile}>
+            <h1 className="bold text-3xl" ref={brandsLaunchedRefMobile}>
               0
             </h1>
-            <h1 className="text-lg reg">Brands Launched</h1>
+            <h1 className="text-lg reg">Clients Serviced</h1>
           </div>
           <div className="text-[#3D155D] flex justify-between items-center pb-4 pr-4 border-b-2 border-[#3D155D] mt-6">
-            <h1 className="bold text-5xl" ref={revenueCreatedRefMobile}>
+            <h1 className="bold text-3xl" ref={revenueCreatedRefMobile}>
               0
             </h1>
-            <h1 className="text-lg reg">Revenue Created</h1>
+            <h1 className="text-lg reg">Individual & Team Awards</h1>
           </div>
           <div className="text-[#3D155D] flex justify-between items-center pb-4 pr-4 mt-6">
-            <h1 className="bold text-5xl" ref={customersReachedRefMobile}>
+            <h1 className="bold text-3xl" ref={customersReachedRefMobile}>
               0
             </h1>
-            <h1 className="text-lg reg">Customers Reached</h1>
+            <h1 className="text-lg reg">Revenue Generated for <br/>Clients</h1>
           </div>
         </div>
       </div>

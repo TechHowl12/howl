@@ -9,6 +9,7 @@ import { Review } from './Pages/Review'
 import { Solutions } from './Pages/Solutions'
 import { Twins } from './Pages/Twins';
 import LocomotiveScroll from 'locomotive-scroll';
+import  {Connect}  from './Pages/Connect';
 
 function App() {
 
@@ -22,14 +23,16 @@ function App() {
      <Header/>
      <Hero/>
      <Brands/>
+     <Twins/>
      <Solutions/>
      <Design/>
-     <Twins/>
+     
      <Review/>
+     <Connect/>
      <Form/>
      <Footer/>
     </div>
   )
 }
 
-export default App
+export default App;
