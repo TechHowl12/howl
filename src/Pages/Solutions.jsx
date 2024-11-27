@@ -118,7 +118,9 @@ export const Solutions = () => {
     autoplaySpeed: 3000,
     pauseOnHover: true,
     arrows: false, // Disable navigation arrows
-    dotsClass: "slick-dots custom-dots", // Custom class for dots
+    dotsClass: "slick-dots custom-dots",
+     // Custom class for dots
+     fade: true
   };
 
   return (
@@ -224,12 +226,12 @@ export const Solutions = () => {
             }
 
             .custom-dots li {
-              margin: 0 6px; /* Adjusted space between dots */
+              margin: 0 2px; /* Adjusted space between dots */
             }
 
             .custom-dots li button {
-              width: 10px;
-              height: 10px;
+              width: 7px;
+              height: 7px;
               background: gray;
               border-radius: 50%;
               transition: background-color 0.3s ease;
