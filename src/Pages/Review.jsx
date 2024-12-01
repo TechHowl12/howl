@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
-import mahindralogo from "../assets/mahindra blues white 1.png";
-import niyologo from "../assets/niyo global 1.png";
-import hrxlogo from "../assets/hrx logo 2.png";
-import schildersvg from "../assets/schinlder.svg";
+
+
+import Schindlerpurewhitelogosvg from "../assets/Schindlerpurewhitelogo.svg";
+import Mahindrapurewhitelogosvg from "../assets/mahindrabluesurewhitelogo.svg";
+import Niyopurewhitelogosvg from "../assets/niyoglobalpurewhitelogo.svg";
+import Hrxpurewhitelogosvg from "../assets/hrxpurewhitelogo.svg";
 
 export const Review = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -12,25 +14,25 @@ export const Review = () => {
       text: "HOWL focuses on problem-solving from a business driven lens which makes them a reliable growth partner. This level of engagement and understanding has truly set them apart in our journey together.”",
       author: "Hiral Soni",
       designation: "Marketing Manager | Schindler",
-      logo: schildersvg,
+      logo: Schindlerpurewhitelogosvg,
     },
     {
       text: "It's always good to work with a team that seamlessly becomes an extension to your own, and HOWL was exactly that for us.”",
       author: "Meghana Bhogle",
       designation: "Brand Solutions | OranJuice Entertainment",
-      logo: mahindralogo,
+      logo: Mahindrapurewhitelogosvg,
     },
     {
       text: "HOWL has been pivotal in helping us solidify Niyo Global’s position as a leading financial product for travellers. It’s incredibly exciting to work with a partner that’s dependable and equally enthusiastic about the product as the brand.”",
       author: "Apurva Harwani",
       designation: "Sr. Marketing Manager | Niyo Solutions Inc.",
-      logo: niyologo,
+      logo: Niyopurewhitelogosvg,
     },
     {
       text: "“HOWL has collectively shaped my brand and paved the way for setting the brand tone, activating the community while high engagement and reach driven ideas were an effortless by-product.”",
       author: "Pallavi Barman",
       designation: "Chief Strategic Advisor | HRX",
-      logo: hrxlogo,
+      logo: Hrxpurewhitelogosvg,
     },
   ];
 

@@ -30,6 +30,9 @@ import niyomobile from "../assets/niyomobile.png";
 import zydusbg from "../assets/zydusbg.png";
 import zydusmobile from "../assets/zydusmobile.png";
 import zyduslogo from "../assets/zydus white 1.png";
+import dbsbank from "../assets/dbsbank.png";
+import dbsbanklogo from "../assets/dbsbanklogo.png";
+import dbsmobilebg from "../assets/dbsmobilebg.png";
 
 // Slide data with mobile backgrounds
 const imageData = [
@@ -39,7 +42,7 @@ const imageData = [
     logo: bselogo,
     title: "BANKING & FINANCE",
     description:
-      "Sachin achieved a remarkable 38% uptick in positive brand sentiment through innovative strategies.",
+      "Initiating investor communities to develop a more consumer-centric brand narrative.",
   },
   {
     background: asianbg,
@@ -64,6 +67,14 @@ const imageData = [
     title: "ENTERTAINMENT",
     description:
       "Social Listening to generate more organic impressions in a week than Amazon did in a year.",
+  },
+  {
+    background: dbsbank,
+    backgroundMobile: dbsmobilebg,
+    logo: dbsbanklogo,
+    title: "BANKING & FINANCE",
+    description:
+      "Purpose driven story-telling for Asia’s Safest and The World’s Best Bank.",
   },
   {
     background: abbottbg,
@@ -145,9 +156,18 @@ export const Solutions = () => {
           <h1 className="uppercase bold text-2xl sm:text-5xl lg:text-7xl font-bold text-center overflow-hidden">
             OVER SCOPE
           </h1>
-          <button className="border-2 light w-1/3 py-4 rounded-tl-xl rounded-br-xl border-[#ffffff] hover:bg-[#3D155D] hover:text-white transition-colors">
-            View Our Portfolio
-          </button>
+          <button
+  className="border-2 light w-1/3 py-4 rounded-tl-xl rounded-br-xl border-[#ffffff] hover:bg-[#3D155D] hover:text-white transition-colors"
+  onClick={() =>
+    window.open(
+      "https://docs.google.com/presentation/d/1Fg0MCOv2U0cTgglORiWvv7fUwSAvcbvLKd38mNIkgrw/edit#slide=id.g2f3eaea9b21_0_0",
+      "_blank"
+    )
+  }
+>
+  View Our Portfolio
+</button>
+
         </div>
       </div>
 
@@ -202,12 +222,12 @@ export const Solutions = () => {
                 </div>
 
                 {/* View Case Study Button */}
-                <button className="absolute hidden sm:block bottom-20 lg:bottom-24 sm:right-5 lg:right-10 border-2 light text-[#ffffff] mt-4 sm:mt-7 px-10 py-4 rounded-tl-xl rounded-br-xl border-[#ffffff] hover:bg-[#3D155D] hover:text-white transition-colors">
+                {/* <button className="absolute hidden sm:block bottom-20 lg:bottom-24 sm:right-5 lg:right-10 border-2 light text-[#ffffff] mt-4 sm:mt-7 px-10 py-4 rounded-tl-xl rounded-br-xl border-[#ffffff] hover:bg-[#3D155D] hover:text-white transition-colors">
                   View Case Study
                 </button>
                 <button className="absolute block sm:hidden bottom-20 right-4 border-2 light text-[#ffffff] mt-4 px-6 py-4 rounded-tl-xl rounded-br-xl border-[#ffffff]">
                   {">"}
-                </button>
+                </button> */}
               </div>
             ))}
           </Slider>

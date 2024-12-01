@@ -39,12 +39,12 @@ export const Twins = () => {
     // Animate desktop numbers
     animateNumber(brandsLaunchedRefDesktop, 100,"+");
     animateNumber(revenueCreatedRefDesktop, 50,"+");
-    animateNumber(customersReachedRefDesktop, 50, "cr+");
+    animateNumber(customersReachedRefDesktop, 20, "+");
 
     // Animate mobile numbers
     animateNumber(brandsLaunchedRefMobile, 100,"+");
     animateNumber(revenueCreatedRefMobile, 50,"+");
-    animateNumber(customersReachedRefMobile, 50, "cr+");
+    animateNumber(customersReachedRefMobile, 20, "+");
 
     // Cleanup on unmount
     return () => {
@@ -56,36 +56,45 @@ export const Twins = () => {
     <div className="bg-[#FCF5FF]">
       <div className="bg-[#FCF5FF] w-11/12 mx-auto pt-[2%] pb-12 relative">
         <div className="flex flex-col sm:flex-row justify-between mt-10">
-          <div className="w-full sm:w-6/12">
+          <div className="w-full">
             <h1 className="xl:text-2xl sm:text-lg uppercase text-[#3D155D] reg">
               We closed our first retainer
             </h1>
             <h1 className="text-3xl sm:text-3xl xl:text-6xl uppercase text-[#3D155D] bold">
               without a logo
             </h1>
-            <p className="text-sm lg:text-lg text-[#00031A] reg mt-4 sm:mt-7">
+            <p className="text-sm lg:text-lg  lg:w-4/6 text-[#00031A] reg mt-4 sm:mt-7">
               Still without a logo, our twin co-founders walked into the office
               of one of India's biggest dry fruit manufacturers with a clear
               approach. No social media jargon, just pure focus on what is
               required to grow the businesses effectively.
             </p>
-            <p className="text-sm lg:text-lg text-[#00031A] reg mt-4 sm:mt-7">
+            <p className="text-sm lg:text-lg lg:w-4/6 text-[#00031A] reg mt-4 sm:mt-7">
               That’s the simple version of how we closed our first brand. From a
               pair of twins into a wolfpack of 100, we scaled this approach to
               all the work we’ve taken responsibility for ever since. We even
               have a logo now.
             </p>
-            <button className="border-2 light text-[#3D155D] mt-4 sm:mt-7 px-10 py-4 rounded-tl-xl rounded-br-xl border-[#3D155D] hover:bg-[#3D155D] hover:text-white transition-colors">
-              About HOWL
-            </button>
+            <button
+  className="border-2 light text-[#3D155D] mt-4 sm:mt-7 px-10 py-4 rounded-tl-xl rounded-br-xl border-[#3D155D] hover:bg-[#3D155D] hover:text-white transition-colors"
+  onClick={() =>
+    window.open(
+      "https://docs.google.com/presentation/d/1Fg0MCOv2U0cTgglORiWvv7fUwSAvcbvLKd38mNIkgrw/edit#slide=id.g2f3eaea9b21_0_0",
+      "_blank"
+    )
+  }
+>
+  Read More
+</button>
+
 
             {/* Div with statistics for Desktop */}
-            <div className="hidden sm:block sm:mt-10 xl:absolute bottom-0 mb-12 left-0 w-full 2xl:w-1/2">
+            <div className="hidden sm:block sm:mt-10 xl:absolute bottom-0 w-4/6 lg:w-1/2 mb-12 left-0">
               <div className="text-[#3D155D] flex justify-between items-center pb-4 sm:pr-1 lg:pr-4 border-b-2 border-[#3D155D] w-full 2xl:w-1/2">
                 <h1 className="bold sm:text-4xl lg:text-5xl" ref={brandsLaunchedRefDesktop}>
                   0
                 </h1>
-                <h1 className="text-lg reg">Clients Serviced</h1>
+                <h1 className="xl:text-lg sm:text-sm reg">Clients Serviced</h1>
               </div>
               <div className="text-[#3D155D] flex justify-between items-center pb-4 sm:pr-1 lg:pr-4 border-b-2 border-[#3D155D] w-full 2xl:w-1/2 mt-6">
                 <h1 className="bold sm:text-4xl lg:text-5xl" ref={revenueCreatedRefDesktop}>
@@ -93,11 +102,11 @@ export const Twins = () => {
                 </h1>
                 <h1 className="text-lg reg">Individual & Team Awards</h1>
               </div>
-              <div className="text-[#3D155D] flex justify-between items-center pb-4 sm:pr-1 lg:pr-4 w-full 2xl:w-1/2 mt-6">
+              <div className="text-[#3D155D] flex justify-between gap-4 items-center pb-4 sm:pr-1 lg:pr-4 w-full 2xl:w-1/2 mt-6">
                 <h1 className="bold sm:text-4xl lg:text-5xl" ref={customersReachedRefDesktop}>
                   0
                 </h1>
-                <h1 className="text-lg reg">Revenue Generated for Clients</h1>
+                <h1 className="text-lg   reg">Brands & IPs Launched</h1>
               </div>
             </div>
           </div>
@@ -123,7 +132,7 @@ export const Twins = () => {
             <h1 className="bold text-3xl" ref={customersReachedRefMobile}>
               0
             </h1>
-            <h1 className="text-lg reg">Revenue Generated for <br/>Clients</h1>
+            <h1 className="text-lg reg">Brands & IPs Launched</h1>
           </div>
         </div>
       </div>

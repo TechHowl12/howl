@@ -33,10 +33,10 @@ export const Header = () => {
 
   // Define navigation links
   const navLinks = [
-    { name: "Work", href: "#" },
-    { name: "About", href: "#" },
-    { name: "Career", href: "#" },
-    { name: "Contact", href: "#" },
+    { name: "Work", href: "https://howl.in/work/" },
+    { name: "About", href: "https://howl.in/about/" },
+    { name: "Careers", href: "https://howl.in/moon/" },
+    { name: "Contact", href: "https://howl.in/contact/" },
   ];
 
   return (
@@ -62,7 +62,7 @@ export const Header = () => {
                     href={link.href}
                     onMouseEnter={() => setHoveredLink(link.name)}
                     onMouseLeave={() => setHoveredLink(null)}
-                    className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:bg-primary-foreground ${
+                    className={`px-3 py-2 rounded-md text-xl font-bold transition-all duration-300 hover:bg-primary-foreground ${
                       hoveredLink === link.name
                         ? "scale-x-110"
                         : hoveredLink
@@ -109,7 +109,7 @@ export const Header = () => {
 
         {/* Mobile Menu */}
         <div
-          className={`fixed top-0 right-0 h-[100vh] w-full bg-[#2B2631] opacity-[95%] z-40 transform ${
+          className={`fixed top-0  right-0 h-[100vh] w-full text-white bg-[#2B2631] opacity-[95%] z-40 transform ${
             isOpen ? "translate-x-0" : "translate-x-full"
           } transition-transform duration-300 ease-in-out md:hidden`}
         >
@@ -137,25 +137,25 @@ export const Header = () => {
           {/* Mobile Navigation Links */}
           <div className="px-2 pt-20 pb-3 space-y-1 sm:px-3">
             <a
-              href="#"
+              href="https://howl.in/"
               className="block px-3 py-2 rounded-md text-base font-medium hover:bg-primary-foreground hover:text-primary"
             >
               Home
             </a>
             <a
-              href="#"
+              href="https://howl.in/about/"
               className="block px-3 py-2 rounded-md text-base font-medium hover:bg-primary-foreground hover:text-primary"
             >
               About
             </a>
             <a
-              href="#"
+              href="https://howl.in/work/"
               className="block px-3 py-2 rounded-md text-base font-medium hover:bg-primary-foreground hover:text-primary"
             >
               Services
             </a>
             <a
-              href="#"
+              href="https://howl.in/contact/"
               className="block px-3 py-2 rounded-md text-base font-medium hover:bg-primary-foreground hover:text-primary"
             >
               Contact
