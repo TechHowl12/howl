@@ -13,10 +13,10 @@ export const Design = () => {
   return (<>
   
   
-     <h1 className=' text-3xl text-center my-14 sm:text-3xl xl:text-6xl uppercase  bold text-white'>Our Approach</h1>
+     <h1 className=' text-3xl text-center my-14 md:text-5xl xl:text-6xl uppercase  bold text-white'>Our Approach</h1>
     <div className="min-h-screen bg-black flex items-center justify-center">
      
-      <div className="flex gap-8 overflow-x-auto  max-w-full">
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8 overflow-x-auto  max-w-full">
         {cards.map((card, index) => (
           <div key={index} className="flex-none">
             <div

@@ -13,27 +13,31 @@ const Footer = () => {
                 <p>Contact</p>
             </div> */}
           
-          <div className="flex flex-col sm:flex-row items-center gap-y-2 gap-x-20 text-sm">
+          <div className="flex flex-col xl:flex-row items-center gap-y-4 gap-x-20 text-sm">
     <a 
         href="https://howl.in/work/" 
+        target='_blank'
         className="hover:text-gray-600  transition-colors duration-200"
     >
         Work
     </a>
     <a 
         href="https://howl.in/about/" 
+        target='_blank'
         className="hover:text-gray-600 transition-colors duration-200"
     >
         About
     </a>
     <a 
         href="https://howl.in/careers/" 
+        target='_blank'
         className="hover:text-gray-600 transition-colors duration-200"
     >
         Careers
     </a>
     <a 
         href="https://howl.in/contact/" 
+        target='_blank'
         className="hover:text-gray-600 transition-colors duration-200"
     >
         Contact
@@ -47,7 +51,7 @@ const Footer = () => {
                 <p>Instagram</p>
                 <p>Youtube</p>
             </div> */}
-               <div className="flex flex-col sm:flex-row items-center gap-y-2 gap-x-6 xl:gap-x-10 text-sm">
+               <div className="flex flex-col min-[1025px]:flex-row items-center gap-y-4 gap-x-6 xl:gap-x-10 text-sm">
     <a 
         href="https://www.linkedin.com/company/howlhq" 
         target="_blank" 
@@ -89,7 +93,7 @@ const Footer = () => {
                 <p className='text-sm reg flex'>Get updates for startup news and trends</p>
                 <input type='text' className='w-full  py-3 pl-4 mt-2 bg-transparent rounded-lg border-2 border-white placeholder-white' placeholder='Email'/>
             </div> */}
-            <div className='sm:w-1/2'>
+            <div className='xl:w-1/2 mx-auto'>
             <img src={Logo} className='w-full'/>
             <p className='text-sm mt-3 reg'>All rights reserved Designed, developed & powered by HOWL Digital Agency</p>
             </div>

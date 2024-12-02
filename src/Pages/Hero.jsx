@@ -1,5 +1,4 @@
-import React, { useRef } from "react";
-import { useGSAP } from "@gsap/react"; // Adjust the path as necessary
+import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Herobgvideo from "../assets/herobgvideo.mp4"; // Ensure this path is correct
@@ -23,31 +22,30 @@ const splitWords = (text) => {
 export const Hero = () => {
   const heroRef = useRef(null);
 
-  useGSAP(() => {
+  useEffect(() => {
     const ctx = gsap.context(() => {
-      // Select all words within the hero section
-      const words = gsap.utils.toArray(".hero .word");
+      const words = gsap.utils.toArray(".word");
 
-      // Animate words
       gsap.fromTo(
         words,
         { y: 100, opacity: 0 },
         {
           y: 0,
+          delay: 0.4,
           opacity: 1,
-          scale: 1,
           duration: 0.6,
           stagger: 0.05,
+          ease: "power2.out",
         }
       );
     }, heroRef);
 
     return () => ctx.revert();
-  }, [heroRef]);
+  }, []);
 
   return (
     <div
-      className=" relative  h-screen flex flex-col items-center justify-center px-10 py-5 lg:pt-[5%]"
+      className=" relative h-screen flex flex-col items-center justify-center px-10 py-5 lg:pt-[5%]"
       ref={heroRef}
     >
       {/* Background Video */}

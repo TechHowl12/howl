@@ -60,6 +60,7 @@ export const Header = () => {
                   <a
                     key={index}
                     href={link.href}
+                    target='_blank'
                     onMouseEnter={() => setHoveredLink(link.name)}
                     onMouseLeave={() => setHoveredLink(null)}
                     className={`px-3 py-2 rounded-md text-lg font-bold transition-all duration-300 hover:bg-primary-foreground ${
@@ -137,25 +138,29 @@ export const Header = () => {
           {/* Mobile Navigation Links */}
           <div className="px-2 pt-20 pb-3 space-y-1 sm:px-3">
             <a
-              href="https://howl.in/"
+              href="https://howl.in/work/"
+              target="_blank"
               className="block px-3 py-2 rounded-md text-base font-medium hover:bg-primary-foreground hover:text-primary"
             >
               Work
             </a>
             <a
               href="https://howl.in/about/"
+              target="_blank"
               className="block px-3 py-2 rounded-md text-base font-medium hover:bg-primary-foreground hover:text-primary"
             >
               About
             </a>
             <a
-              href="https://howl.in/work/"
+              href="https://howl.in/careers/"
+              target="_blank"
               className="block px-3 py-2 rounded-md text-base font-medium hover:bg-primary-foreground hover:text-primary"
             >
               Careers
             </a>
             <a
               href="https://howl.in/contact/"
+              target="_blank"
               className="block px-3 py-2 rounded-md text-base font-medium hover:bg-primary-foreground hover:text-primary"
             >
               Contact

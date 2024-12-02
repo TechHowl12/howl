@@ -159,7 +159,7 @@ export const Solutions = () => {
       {/* Desktop Header Section */}
       <div className="hidden lg:block py-14 sm:py-20 bg-[#00031A] text-white">
         <div className="flex flex-row justify-center items-center w-10/12 mx-auto gap-y-8 gap-x-8">
-          <h1 className="uppercase bold text-2xl sm:text-5xl lg:text-7xl font-bold overflow-hidden">
+          <h1 className="uppercase bold text-2xl sm:text-5xl lg:text-7xl 2xl:text-8xl font-bold overflow-hidden">
             SOLUTION
           </h1>
           <p className="text-sm reg sm:w-8/12 lg:w-5/12">
@@ -173,7 +173,7 @@ export const Solutions = () => {
 
         {/* Subheader and Button Section */}
         <div className="flex flex-col sm:flex-row justify-center items-center w-10/12 mx-auto gap-y-8 gap-x-8 mt-6">
-          <h1 className="uppercase bold text-2xl sm:text-5xl lg:text-7xl font-bold text-center overflow-hidden">
+          <h1 className="uppercase bold text-2xl sm:text-5xl lg:text-7xl 2xl:text-8xl font-bold text-center overflow-hidden">
             OVER SCOPE
           </h1>
           <button
@@ -207,14 +207,14 @@ export const Solutions = () => {
       </div>
 
       {/* Carousel Section */}
-      <div className="bg-[#0A001F] text-white h-screen lg:h-[130vh]">
-        <div className="relative w-full h-screen lg:h-[130vh]">
-          <Slider {...settings} className="w-full h-screen lg:h-[130vh]">
+      <div className="bg-[#0A001F] text-white h-screen xl:h-[130vh]">
+        <div className="relative w-full h-screen xl:h-[130vh]">
+          <Slider {...settings} className="w-full h-screen xl:h-[130vh]">
             {imageData.map((image, index) => (
-              <div key={index} className="relative w-full h-screen lg:h-[130vh]">
+              <div key={index} className="relative w-full h-screen xl:h-[130vh]">
                 {/* Desktop Background */}
                 <div
-                  className="w-full h-screen lg:h-[130vh] bg-cover bg-center hidden lg:block"
+                  className="w-full h-screen xl:h-[130vh] bg-cover bg-center hidden lg:block"
                   style={{
                     backgroundImage: `url(${image.background})`,
                   }}
@@ -229,7 +229,7 @@ export const Solutions = () => {
                 ></div>
 
                 {/* Overlay */}
-                <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+                <div className="absolute bg-black bg-opacity-50"></div>
 
                 {/* Dynamic Content */}
                 <div className="absolute bottom-20 left-5 lg:left-10 text-white">
