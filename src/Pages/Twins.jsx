@@ -31,19 +31,21 @@ export const Twins = () => {
           toggleActions: "play none none none",
         },
         onUpdate: () => {
-          ref.current.innerText = `${Math.floor(ref.current.innerText)}${prefix}`;
+          ref.current.innerText = `${Math.floor(
+            ref.current.innerText
+          )}${prefix}`;
         },
       });
     };
 
     // Animate desktop numbers
-    animateNumber(brandsLaunchedRefDesktop, 100,"+");
-    animateNumber(revenueCreatedRefDesktop, 50,"+");
+    animateNumber(brandsLaunchedRefDesktop, 100, "+");
+    animateNumber(revenueCreatedRefDesktop, 50, "+");
     animateNumber(customersReachedRefDesktop, 20, "+");
 
     // Animate mobile numbers
-    animateNumber(brandsLaunchedRefMobile, 100,"+");
-    animateNumber(revenueCreatedRefMobile, 50,"+");
+    animateNumber(brandsLaunchedRefMobile, 100, "+");
+    animateNumber(revenueCreatedRefMobile, 50, "+");
     animateNumber(customersReachedRefMobile, 20, "+");
 
     // Cleanup on unmount
@@ -63,59 +65,65 @@ export const Twins = () => {
             <h1 className="text-3xl sm:text-3xl xl:text-6xl uppercase text-[#3D155D] bold">
               without a logo
             </h1>
-            <p className="text-sm lg:text-lg  lg:w-4/6 text-[#00031A] reg mt-4 sm:mt-7">
+            <p className="text-sm lg:text-base xl:text-lg md:w-5/6 xl:w-4/6 text-[#00031A] reg mt-4 sm:mt-5">
               Still without a logo, our twin co-founders walked into the office
               of one of India's biggest dry fruit manufacturers with a clear
               approach. No social media jargon, just pure focus on what is
               required to grow the businesses effectively.
             </p>
-            <p className="text-sm lg:text-lg lg:w-4/6 text-[#00031A] reg mt-4 sm:mt-7">
+            <p className="text-sm lg:text-base xl:text-lg md:w-5/6 xl:w-4/6 text-[#00031A] reg mt-4 sm:mt-5">
               That’s the simple version of how we closed our first brand. From a
               pair of twins into a wolfpack of 100, we scaled this approach to
               all the work we’ve taken responsibility for ever since. We even
               have a logo now.
             </p>
             <button
-  className="border-2 light text-[#3D155D] mt-4 sm:mt-7 px-10 py-4 rounded-tl-xl rounded-br-xl border-[#3D155D] hover:bg-[#3D155D] hover:text-white transition-colors"
-  onClick={() =>
-    window.open(
-      "https://docs.google.com/presentation/d/1Fg0MCOv2U0cTgglORiWvv7fUwSAvcbvLKd38mNIkgrw/edit#slide=id.g2f3eaea9b21_0_0",
-      "_blank"
-    )
-  }
->
-  Read More
-</button>
-
+              className="border-2 light text-[#3D155D] mt-4 sm:mt-7 px-10 py-4 rounded-tl-xl rounded-br-xl border-[#3D155D] hover:bg-[#3D155D] hover:text-white transition-colors"
+              onClick={() =>
+                window.open(
+                  "https://docs.google.com/presentation/d/1Fg0MCOv2U0cTgglORiWvv7fUwSAvcbvLKd38mNIkgrw/edit#slide=id.g2f3eaea9b21_0_0",
+                  "_blank"
+                )
+              }
+            >
+              Read More
+            </button>
 
             {/* Div with statistics for Desktop */}
-            <div className="hidden sm:block sm:mt-10 xl:absolute bottom-0 w-4/6 lg:w-1/2 mb-12 left-0">
-              <div className="text-[#3D155D] flex justify-between items-center pb-4 sm:pr-1 lg:pr-4 border-b-2 border-[#3D155D] w-full 2xl:w-1/2">
-                <h1 className="bold sm:text-4xl lg:text-5xl" ref={brandsLaunchedRefDesktop}>
-                  0
-                </h1>
-                <h1 className="xl:text-lg sm:text-sm reg">Clients Serviced</h1>
-              </div>
-              <div className="text-[#3D155D] flex justify-between items-center pb-4 sm:pr-1 lg:pr-4 border-b-2 border-[#3D155D] w-full 2xl:w-1/2 mt-6">
-                <h1 className="bold sm:text-4xl lg:text-5xl" ref={revenueCreatedRefDesktop}>
-                  0
-                </h1>
-                <h1 className="text-lg reg">Individual & Team Awards</h1>
-              </div>
-              <div className="text-[#3D155D] flex justify-between gap-4 items-center pb-4 sm:pr-1 lg:pr-4 w-full 2xl:w-1/2 mt-6">
-                <h1 className="bold sm:text-4xl lg:text-5xl" ref={customersReachedRefDesktop}>
-                  0
-                </h1>
-                <h1 className="text-lg   reg">Brands & IPs Launched</h1>
-              </div>
-            </div>
           </div>
 
-          <img data-scroll data-scroll-speed="0.3" className="w-full mt-7 sm:mt-0 sm:w-5/12" src={Twinss} alt="Twins" />
+          <img
+            data-scroll
+            // data-scroll-speed="0.3"
+            className="w-full mt-7 sm:mt-0 sm:w-5/12"
+            src={Twinss}
+            alt="Twins"
+          />
+        </div>
+
+        <div className="hidden min-[1025px]:block w-4/6 absolute bottom-0 left-0 mb-12">
+          <div className="text-[#3D155D] px-4 pb-4 flex justify-between items-center border-b-2 border-[#3D155D] w-1/2">
+            <h1 className="bold sm:text-2xl lg:text-3xl xl:text-5xl" ref={brandsLaunchedRefDesktop}>
+              0
+            </h1>
+            <h1 className="sm:text-sm lg:text-base xl:text-lg reg">Clients Serviced</h1>
+          </div>
+          <div className="text-[#3D155D] px-4 pb-4 mt-4 flex justify-between items-center border-b-2 border-[#3D155D] w-1/2">
+            <h1 className="bold sm:text-2xl lg:text-3xl xl:text-5xl" ref={revenueCreatedRefDesktop}>
+              0
+            </h1>
+            <h1 className="sm:text-sm lg:text-base xl:text-lg reg">Individual & Team Awards</h1>
+          </div>
+          <div className="text-[#3D155D] px-4 pb-4 mt-4 flex justify-between items-center border-b-2 border-[#3D155D] w-1/2">
+            <h1 className="bold sm:text-2xl lg:text-3xl xl:text-5xl" ref={customersReachedRefDesktop}>
+              0
+            </h1>
+            <h1 className="sm:text-sm lg:text-base xl:text-lg reg">Brands & IPs Launched</h1>
+          </div>
         </div>
 
         {/* Div with statistics for Mobile */}
-        <div className="block sm:hidden w-full mt-10">
+        <div className="block min-[1025px]:hidden w-full mt-10">
           <div className="text-[#3D155D] flex justify-between items-center pb-4 pr-4 border-b-2 border-[#3D155D]">
             <h1 className="bold text-3xl" ref={brandsLaunchedRefMobile}>
               0

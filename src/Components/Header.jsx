@@ -62,7 +62,7 @@ export const Header = () => {
                     href={link.href}
                     onMouseEnter={() => setHoveredLink(link.name)}
                     onMouseLeave={() => setHoveredLink(null)}
-                    className={`px-3 py-2 rounded-md text-xl font-bold transition-all duration-300 hover:bg-primary-foreground ${
+                    className={`px-3 py-2 rounded-md text-lg font-bold transition-all duration-300 hover:bg-primary-foreground ${
                       hoveredLink === link.name
                         ? "scale-x-110"
                         : hoveredLink
@@ -140,7 +140,7 @@ export const Header = () => {
               href="https://howl.in/"
               className="block px-3 py-2 rounded-md text-base font-medium hover:bg-primary-foreground hover:text-primary"
             >
-              Home
+              Work
             </a>
             <a
               href="https://howl.in/about/"
@@ -152,7 +152,7 @@ export const Header = () => {
               href="https://howl.in/work/"
               className="block px-3 py-2 rounded-md text-base font-medium hover:bg-primary-foreground hover:text-primary"
             >
-              Services
+              Careers
             </a>
             <a
               href="https://howl.in/contact/"

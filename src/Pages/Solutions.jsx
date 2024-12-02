@@ -33,6 +33,8 @@ import zyduslogo from "../assets/zydus white 1.png";
 import dbsbank from "../assets/dbsbank.png";
 import dbsbanklogo from "../assets/dbsbanklogo.png";
 import dbsmobilebg from "../assets/dbsmobilebg.png";
+import next from "../assets/Next.png";
+import prev from "../assets/Previous.png";
 
 // Slide data with mobile backgrounds
 const imageData = [
@@ -118,6 +120,24 @@ const imageData = [
   },
 ];
 
+const NextArrow = ({ onClick }) => (
+  <div
+    className="absolute right-7 top-1/2 border-2 px-5 py-4 rounded-tl-lg rounded-br-lg transform -translate-y-1/2 z-10 cursor-pointer text-white"
+    onClick={onClick}
+  >
+    <img src={next}/>
+  </div>
+);
+
+const PrevArrow = ({ onClick }) => (
+  <div
+    className="absolute left-7 top-1/2 border-2 px-5 py-4 rounded-tl-lg rounded-br-lg transform -translate-y-1/2 z-10 cursor-pointer text-white"
+    onClick={onClick}
+  >
+   <img src={prev}/>
+  </div>
+);
+
 export const Solutions = () => {
   const settings = {
     dots: true,
@@ -128,16 +148,16 @@ export const Solutions = () => {
     slidesToScroll: 1,
     autoplaySpeed: 3000,
     pauseOnHover: true,
-    arrows: false, // Disable navigation arrows
+    nextArrow: <NextArrow />, // Add next arrow
+    prevArrow: <PrevArrow />,
     dotsClass: "slick-dots custom-dots",
-     // Custom class for dots
      fade: true
   };
 
   return (
     <>
       {/* Desktop Header Section */}
-      <div className="hidden lg:block py-14 sm:py-20 text-white">
+      <div className="hidden lg:block py-14 sm:py-20 bg-[#00031A] text-white">
         <div className="flex flex-row justify-center items-center w-10/12 mx-auto gap-y-8 gap-x-8">
           <h1 className="uppercase bold text-2xl sm:text-5xl lg:text-7xl font-bold overflow-hidden">
             SOLUTION
