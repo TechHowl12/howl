@@ -16,7 +16,7 @@ export const Form = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
 
     // Ensure all fields are filled
@@ -31,17 +31,32 @@ export const Form = () => {
       return;
     }
 
-    // Simulate successful form submission
-    setStatus("Data has been submitted successfully!");
+    const requestOptions = {
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    };
 
-    // Optionally clear the form after submission
-    setFormData({
-      firstName: "",
-      lastName: "",
-      email: "",
-      contactNumber: "",
-      companyName: "",
-    });
+    try {
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbwOPsIkbpsKeYFwgnV5Yq3rAKUWQu-GW6L1Lwg728vTfCoQKZmcMEl16d79_H85sF9lRQ/exec",
+        requestOptions
+      );
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        contactNumber: "",
+        companyName: "",
+      });
+      setStatus("Data has been submitted successfully!");
+    } catch (error) {
+      console.error("Error:", error);
+    }
+
   };
 
   return (
