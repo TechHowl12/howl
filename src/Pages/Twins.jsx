@@ -65,13 +65,13 @@ export const Twins = () => {
             <h1 className="text-3xl sm:text-3xl xl:text-6xl uppercase text-[#3D155D] bold">
               without a logo
             </h1>
-            <p className="text-sm lg:text-base xl:text-lg md:w-5/6 xl:w-4/6 text-[#00031A] reg mt-4 sm:mt-5">
+            <p className="text-sm lg:text-base xl:text-lg md:w-5/6 min-[1290px]:w-4/6 text-[#00031A] reg mt-4 sm:mt-5">
               Still without a logo, our twin co-founders walked into the office
               of one of India's biggest dry fruit manufacturers with a clear
               approach. No social media jargon, just pure focus on what is
               required to grow the businesses effectively.
             </p>
-            <p className="text-sm lg:text-base xl:text-lg md:w-5/6 xl:w-4/6 text-[#00031A] reg mt-4 sm:mt-5">
+            <p className="text-sm lg:text-base xl:text-lg md:w-5/6 min-[1290px]:w-4/6 text-[#00031A] reg mt-4 sm:mt-5">
               That’s the simple version of how we closed our first brand. From a
               pair of twins into a wolfpack of 100, we scaled this approach to
               all the work we’ve taken responsibility for ever since. We even
