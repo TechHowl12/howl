@@ -35,7 +35,7 @@ export const Header = () => {
   const navLinks = [
     { name: "Work", href: "https://pages.howl.in/work/" },
     { name: "About", href: "https://pages.howl.in/about/" },
-    { name: "Careers", href: "https://pages.howl.in/moon/" },
+    { name: "Careers", href: "https://pages.howl.in/careers/" },
     { name: "Contact", href: "https://pages.howl.in/contact/" },
   ];
 
