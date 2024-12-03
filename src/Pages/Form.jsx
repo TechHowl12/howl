@@ -10,24 +10,48 @@ export const Form = () => {
   });
 
   const [status, setStatus] = useState("");
+  const [errors, setErrors] = useState({});
+
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const validateContactNumber = (contactNumber) => {
+    const contactRegex = /^[0-9]{10}$/; // Adjust for your specific country format
+    return contactRegex.test(contactNumber);
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+    setErrors({ ...errors, [name]: "" }); // Clear specific field error on change
   };
 
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Ensure all fields are filled
-    if (
-      !formData.firstName ||
-      !formData.lastName ||
-      !formData.email ||
-      !formData.contactNumber ||
-      !formData.companyName
-    ) {
-      setStatus("Please fill out all fields.");
+    // Validation checks
+    let formErrors = {};
+    if (!formData.firstName) formErrors.firstName = "First name is required.";
+    if (!formData.lastName) formErrors.lastName = "Last name is required.";
+    if (!formData.email) {
+      formErrors.email = "Email is required.";
+    } else if (!validateEmail(formData.email)) {
+      formErrors.email = "Invalid email address.";
+    }
+    if (!formData.contactNumber) {
+      formErrors.contactNumber = "Contact number is required.";
+    } else if (!validateContactNumber(formData.contactNumber)) {
+      formErrors.contactNumber = "Invalid contact number (must be 10 digits).";
+    }
+    if (!formData.companyName)
+      formErrors.companyName = "Company name is required.";
+
+    setErrors(formErrors);
+
+    if (Object.keys(formErrors).length > 0) {
+      setStatus("Please fix the errors and try again.");
       return;
     }
 
@@ -55,8 +79,8 @@ export const Form = () => {
       setStatus("Data has been submitted successfully!");
     } catch (error) {
       console.error("Error:", error);
+      setStatus("An error occurred while submitting the data.");
     }
-
   };
 
   return (
@@ -81,60 +105,77 @@ export const Form = () => {
                 Drive revenue and focus budgets to break past <br /> benchmarks.
                 We're just a HOWL away.
               </p>
-
-              <p className="text-[#00031A] mt-0 sm:mt-4 reg mb-4 sm:mb-0 block sm:hidden">
-                Drive revenue and focus budgets to break past benchmarks. We're
-                just a HOWL away.
-              </p>
             </div>
             <div className="sm:w-1/2 flex flex-col gap-y-5 mt-7 sm:mt-0">
               <div className="flex justify-between gap-x-3">
-                <input
-                  type="text"
-                  name="firstName"
-                  value={formData.firstName}
-                  onChange={handleChange}
-                  className="border-[#AEAAB2] bg-[#FCF5FF] border-2 pl-3 rounded-md reg w-full py-3"
-                  placeholder="First Name"
-                  required
-                />
-                <input
-                  type="text"
-                  name="lastName"
-                  value={formData.lastName}
-                  onChange={handleChange}
-                  className="border-[#AEAAB2] bg-[#FCF5FF] border-2 pl-3 rounded-md reg w-full py-3"
-                  placeholder="Last Name"
-                  required
-                />
+                <div className="w-full">
+                  <input
+                    type="text"
+                    name="firstName"
+                    value={formData.firstName}
+                    onChange={handleChange}
+                    className="border-[#AEAAB2] bg-[#FCF5FF] border-2 pl-3 rounded-md reg w-full py-3"
+                    placeholder="First Name"
+                  />
+                  {errors.firstName && (
+                    <p className="text-red-500 text-xs sm:text-sm mt-1 light">{errors.firstName}</p>
+                  )}
+                </div>
+                <div className="w-full">
+                  <input
+                    type="text"
+                    name="lastName"
+                    value={formData.lastName}
+                    onChange={handleChange}
+                    className="border-[#AEAAB2] bg-[#FCF5FF] border-2 pl-3 rounded-md reg w-full py-3"
+                    placeholder="Last Name"
+                  />
+                  {errors.lastName && (
+                    <p className="text-red-500 text-xs sm:text-sm mt-1 light">{errors.lastName}</p>
+                  )}
+                </div>
               </div>
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                className="border-[#AEAAB2] bg-[#FCF5FF] border-2 pl-2 rounded-md reg w-full py-3"
-                placeholder="Email"
-                required
-              />
-              <input
-                type="text"
-                name="contactNumber"
-                value={formData.contactNumber}
-                onChange={handleChange}
-                className="border-[#AEAAB2] bg-[#FCF5FF] border-2 pl-2 rounded-md reg w-full py-3"
-                placeholder="Contact Number"
-                required
-              />
-              <input
-                type="text"
-                name="companyName"
-                value={formData.companyName}
-                onChange={handleChange}
-                className="border-[#AEAAB2] bg-[#FCF5FF] border-2 pl-2 rounded-md reg w-full py-3"
-                placeholder="Company Name"
-                required
-              />
+              <div>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="border-[#AEAAB2] bg-[#FCF5FF] border-2 pl-2 rounded-md reg w-full py-3"
+                  placeholder="Email"
+                />
+                {errors.email && (
+                  <p className="text-red-500 text-xs sm:text-sm mt-1 light">{errors.email}</p>
+                )}
+              </div>
+              <div>
+                <input
+                  type="text"
+                  name="contactNumber"
+                  value={formData.contactNumber}
+                  onChange={handleChange}
+                  className="border-[#AEAAB2] bg-[#FCF5FF] border-2 pl-2 rounded-md reg w-full py-3"
+                  placeholder="Contact Number"
+                />
+                {errors.contactNumber && (
+                  <p className="text-red-500 text-xs sm:text-sm mt-1 light">
+                    {errors.contactNumber}
+                  </p>
+                )}
+              </div>
+              <div>
+                <input
+                  type="text"
+                  name="companyName"
+                  value={formData.companyName}
+                  onChange={handleChange}
+                  className="border-[#AEAAB2] bg-[#FCF5FF] border-2 pl-2 rounded-md reg w-full py-3"
+                  placeholder="Company Name"
+                />
+                {errors.companyName && (
+                  <p className="text-red-500 text-xs sm:text-sm mt-1 light">{errors.companyName}</p>
+                )}
+              </div>
               <p className="reg text-sm text-[#AEAAB2]">
                 *All the fields are required
               </p>
@@ -146,11 +187,9 @@ export const Form = () => {
               </button>
             </div>
           </div>
-          {status && <p className="text-center mt-4">{status}</p>}
+          {status && <p className="text-center mt-4 reg">{status}</p>}
         </form>
       </div>
     </div>
   );
 };
-
-

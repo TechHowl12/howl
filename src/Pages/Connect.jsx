@@ -90,12 +90,12 @@ export const Connect = () => {
             <img
               src={diwalipic1}
               alt="Small Image 1"
-              className="rounded-lg object-cover w-[173px] h-[123px] sm:w-full sm:h-full"
+              className="rounded-lg object-cover w-[155px] h-[123px] sm:w-full sm:h-full"
             />
             <img
               src={diwalipic2}
               alt="Small Image 2"
-              className="rounded-lg object-cover w-[173px] h-[123px] sm:w-full sm:h-full"
+              className="rounded-lg object-cover w-[155px] h-[123px] sm:w-full sm:h-full"
             />
           </div>
 
@@ -103,12 +103,12 @@ export const Connect = () => {
             <img
               src={diwalipic4}
               alt="Vertical Image 1"
-              className="rounded-lg object-cover w-[173px] h-[107px] sm:w-full sm:h-full"
+              className="rounded-lg object-cover w-[155px] h-[107px] sm:w-full sm:h-full"
             />
             <img
               src={diwalipic5}
               alt="Vertical Image 2"
-              className="rounded-lg object-cover w-[173px] h-[107px] sm:w-full sm:h-full"
+              className="rounded-lg object-cover w-[155px] h-[107px] sm:w-full sm:h-full"
             />
           </div>
         </div>
