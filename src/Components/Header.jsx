@@ -81,7 +81,7 @@ export const Header = () => {
             <div className="md:hidden">
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className={`inline-flex items-center justify-center p-2 bg-[#2B2631] bg-opacity-50 rounded-tl-xl rounded-br-xl z-50 ${
+                className={`inline-flex items-center justify-center z-50 ${
                   isOpen ? "hidden" : ""
                 }`}
                 aria-expanded={isOpen}
