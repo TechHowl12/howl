@@ -6,9 +6,9 @@ import HRXLogo from "../assets/hrx logo 1.png"; // Logo for the first card
 import AmexLogo from "../assets/am ex white logo 1.png"; // Logo for the second card
 import SchindlerLogo from "../assets/white logo-02 1.png"; // Logo for the third card
 
-
 export const Brands = () => {
-  const gradientBorder = "linear-gradient(to right, #F79A5F 0%, #F69976 9%, #F399B1 29%, #F399C1 33%, #C7A7CF 69%, #A1B5DD 99%)";
+  const gradientBorder =
+    "linear-gradient(to right, #F79A5F 0%, #F69976 9%, #F399B1 29%, #F399C1 33%, #C7A7CF 69%, #A1B5DD 99%)";
 
   return (
     <div className="bg-[#0A001F] min-h-screen flex items-center justify-center sm:py-20">
@@ -33,11 +33,7 @@ export const Brands = () => {
               style={{ width: "297.4px", height: "390px" }}
             />
             {/* Logo Image */}
-            <img
-              src={HRXLogo}
-              alt="HRX Logo"
-              className="mt-12"
-            />
+            <img src={HRXLogo} alt="HRX Logo" className="mt-12" />
             {/* Content */}
             <div className="text-center mt-4 px-4">
               <h3
@@ -78,11 +74,7 @@ export const Brands = () => {
               style={{ width: "297.4px", height: "390px" }}
             />
             {/* Logo Image */}
-            <img
-              src={SchindlerLogo}
-              alt="Schindler Logo"
-              className="mt-8"
-            />
+            <img src={SchindlerLogo} alt="Schindler Logo" className="mt-8" />
             {/* Content */}
             <div className="text-center mt-4 px-4">
               <h3
@@ -95,9 +87,9 @@ export const Brands = () => {
                 className="text-[#FCF5FF] text-xs mb-4"
                 style={{ fontFamily: "Hoves-light" }}
               >
-                Building offline communities, ideating product lines, defining
-                go-to-market strategies to use social media to inspire a billion
-                Indians to be the best version of themselves.
+                Highly segregated audience funnels went on to set a global
+                benchmark from a digital opportunity created for a legacy brand
+                to continue changing how the world moves.
               </p>
             </div>
           </div>
@@ -123,11 +115,7 @@ export const Brands = () => {
               style={{ width: "297.4px", height: "390px" }}
             />
             {/* Logo Image */}
-            <img
-              src={AmexLogo}
-              alt="American Express Logo"
-              className="mt-14"
-            />
+            <img src={AmexLogo} alt="American Express Logo" className="mt-14" />
             {/* Content */}
             <div className="text-center mt-4 px-4">
               <h3
@@ -140,9 +128,9 @@ export const Brands = () => {
                 className="text-[#FCF5FF] text-xs mb-4"
                 style={{ fontFamily: "Hoves-light" }}
               >
-                Building offline communities, ideating product lines, defining
-                go-to-market strategies to use social media to inspire a billion
-                Indians to be the best version of themselves.
+                Devising a strategic framework to distribute reassurance across
+                digital and offline touchpoints, ensuring maximum cardmember
+                retention over an unforeseen acquisition freeze.
               </p>
             </div>
           </div>

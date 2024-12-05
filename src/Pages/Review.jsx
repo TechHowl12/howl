@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-
 import Schindlerpurewhitelogosvg from "../assets/Schindlerpurewhitelogo.svg";
 import Mahindrapurewhitelogosvg from "../assets/mahindrabluesurewhitelogo.svg";
 import Niyopurewhitelogosvg from "../assets/niyoglobalpurewhitelogo.svg";
@@ -43,6 +42,10 @@ export const Review = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const handleLogoClick = (index) => {
+    setCurrentIndex(index);
+  };
+
   return (
     <div className="w-full py-20">
       <div className="h-86 flex justify-center items-center flex-col">
@@ -64,15 +67,12 @@ export const Review = () => {
             key={index}
             src={review.logo}
             className={`transition-all cursor-pointer w-10 h-10 sm:w-auto sm:h-auto duration-300 ${
-              index === currentIndex ? "brightness-300" : "brightness-50" 
-              
+              index === currentIndex ? "brightness-300" : "brightness-50"
             }`}
             style={{
-              // height: index === currentIndex ? "60px" : "50px", // Adjust height dynamically
-              // width: index === currentIndex ? "auto" : "auto", // Maintain aspect ratio
               filter: index === currentIndex ? "brightness(200%)" : "brightness(50%)",
-
             }}
+            onClick={() => handleLogoClick(index)} // Update currentIndex on click
           />
         ))}
       </div>
