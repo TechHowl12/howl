@@ -148,7 +148,7 @@ export const Solutions = () => {
     speed: 600,
     slidesToShow: 1, // Show one slide at a time
     slidesToScroll: 1,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 3000,
     pauseOnHover: false,
     centerMode: true, // Enable center mode
     centerPadding: "7%", // Show 5% of the adjacent slides
