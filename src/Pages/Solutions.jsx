@@ -149,7 +149,7 @@ export const Solutions = () => {
     slidesToShow: 1, // Show one slide at a time
     slidesToScroll: 1,
     autoplaySpeed: 2000,
-    pauseOnHover: true,
+    pauseOnHover: false,
     centerMode: true, // Enable center mode
     centerPadding: "7%", // Show 5% of the adjacent slides
     nextArrow: <NextArrow />, // Custom Next Arrow
