@@ -52,7 +52,7 @@ export const Connect = () => {
         </div>
 
         {/* Second Row */}
-        <div className="flex px-14 gap-4 mt-8">
+        <div className="flex px-14 gap-4 mt-4">
           {/* Large Image */}
           <img src={diwalipic3} alt="Large Image" className="rounded-lg" />
 

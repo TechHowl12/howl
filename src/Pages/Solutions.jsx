@@ -15,7 +15,7 @@ import baggitlogo from "../assets/baggit 2.png";
 import amazonmusicbg from "../assets/amazonmusicbg.png";
 import amazonmobile from "../assets/amazonmobile.png";
 import Amplogo from "../assets/APM logo 1.png";
-import abbottbg from "../assets/abbotttbg.png";
+import abbottbg from "../assets/abotttbg.png";
 import abbotmobile from "../assets/abbottmobile.png";
 import abbottlogo from "../assets/abbott white logo 1.png";
 import soapbg from "../assets/soapbg.png";
@@ -179,7 +179,7 @@ export const Solutions = () => {
     speed: 600,
     slidesToShow: 1, // Show one slide at a time
     slidesToScroll: 1,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 4000,
     pauseOnHover: false,
     centerMode: true, // Enable center mode
     centerPadding: "12%", // Show 5% of the adjacent slides
