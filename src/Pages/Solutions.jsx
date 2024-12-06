@@ -40,7 +40,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-
 const imageData = [
   {
     background: bseBackground,
@@ -145,7 +144,6 @@ const PrevArrow = ({ onClick }) => (
 );
 
 export const Solutions = () => {
-
   const sliderRef = useRef(null);
   const sliderContainerRef = useRef(null);
 
@@ -292,11 +290,10 @@ export const Solutions = () => {
                   }}
                 ></div>
 
-                {/* Overlay */}
-                {/* <div className="absolute top-0 left-0 w-full h-full"></div> */}
+                <div className="absolute bottom-0 left-0 w-full h-2/3 bg-gradient-to-t from-[#070707] to-transparent"></div>
 
                 {/* Dynamic Content */}
-                <div className="absolute bottom-7 lg:bottom-20 left-5 lg:left-10 text-white">
+                <div className="absolute bottom-7 lg:bottom-16 left-5 lg:left-10 text-white">
                   {/* Dynamic Logo */}
                   <img
                     src={image.logo}
