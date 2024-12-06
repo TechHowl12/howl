@@ -120,21 +120,23 @@ const imageData = [
   },
 ];
 
+// Custom Next Arrow Component
 const NextArrow = ({ onClick }) => (
   <div
-    className="absolute right-7 top-1/2 border-2 px-5 py-4 rounded-tl-lg rounded-br-lg transform -translate-y-1/2 z-10 cursor-pointer text-white"
+    className="absolute right-7 sm:right-10 xl:right-20 bottom-[18px] sm:bottom[20px] transform -translate-y-1/2 z-10 cursor-pointer text-white"
     onClick={onClick}
   >
-    <img src={next}/>
+    <img src={next} alt="Next Slide" />
   </div>
 );
 
+// Custom Previous Arrow Component
 const PrevArrow = ({ onClick }) => (
   <div
-    className="absolute left-7 top-1/2 border-2 px-5 py-4 rounded-tl-lg rounded-br-lg transform -translate-y-1/2 z-10 cursor-pointer text-white"
+    className="absolute left-7 sm:left-10 xl:left-20 bottom-[18px] sm:bottom[20px] transform -translate-y-1/2 z-10 cursor-pointer text-white"
     onClick={onClick}
   >
-   <img src={prev}/>
+    <img src={prev} alt="Previous Slide" />
   </div>
 );
 
@@ -144,14 +146,35 @@ export const Solutions = () => {
     infinite: true,
     autoplay: true,
     speed: 600,
-    slidesToShow: 1,
+    slidesToShow: 1, // Show one slide at a time
     slidesToScroll: 1,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 2000,
     pauseOnHover: true,
-    nextArrow: <NextArrow />, // Add next arrow
-    prevArrow: <PrevArrow />,
+    centerMode: true, // Enable center mode
+    centerPadding: "7%", // Show 5% of the adjacent slides
+    nextArrow: <NextArrow />, // Custom Next Arrow
+    prevArrow: <PrevArrow />, // Custom Previous Arrow
     dotsClass: "slick-dots custom-dots",
-     fade: true
+    responsive: [
+      {
+        breakpoint: 1024, // Tablet view
+        settings: {
+          centerPadding: "10%", // Adjust padding for smaller screens
+        },
+      },
+      {
+        breakpoint: 600, // Mobile view
+        settings: {
+          centerPadding: "5%", // Maintain 5% padding
+        },
+      },
+      {
+        breakpoint: 480, // Smaller mobile view
+        settings: {
+          centerPadding: "10%", // Maintain 5% padding
+        },
+      },
+    ],
   };
 
   return (
@@ -177,24 +200,27 @@ export const Solutions = () => {
             OVER SCOPE
           </h1>
           <button
-  className="border-2 light w-1/3 py-4 rounded-tl-xl rounded-br-xl border-[#ffffff] hover:bg-[#3D155D] hover:text-white transition-colors"
-  onClick={() =>
-    window.open(
-      "https://docs.google.com/presentation/d/1Fg0MCOv2U0cTgglORiWvv7fUwSAvcbvLKd38mNIkgrw/edit#slide=id.g2f3eaea9b21_0_0",
-      "_blank"
-    )
-  }
->
-  View Our Portfolio
-</button>
-
+            className="border-2 light w-1/3 py-4 rounded-tl-xl rounded-br-xl border-[#ffffff] hover:bg-[#3D155D] hover:text-white transition-colors"
+            onClick={() =>
+              window.open(
+                "https://docs.google.com/presentation/d/1Fg0MCOv2U0cTgglORiWvv7fUwSAvcbvLKd38mNIkgrw/edit#slide=id.g2f3eaea9b21_0_0",
+                "_blank"
+              )
+            }
+          >
+            View Our Portfolio
+          </button>
         </div>
       </div>
 
       {/* Mobile Header Section */}
       <div className="block lg:hidden py-20 pl-6 sm:pl-10 text-white">
-        <h1 className="uppercase bold text-4xl sm:text-7xl overflow-hidden">SOLUTION</h1>
-        <h1 className="uppercase bold text-4xl sm:text-7xl overflow-hidden">OVER SCOPE</h1>
+        <h1 className="uppercase bold text-4xl sm:text-7xl overflow-hidden">
+          SOLUTION
+        </h1>
+        <h1 className="uppercase bold text-4xl sm:text-7xl overflow-hidden">
+          OVER SCOPE
+        </h1>
         <p className="reg mt-6 text-sm sm:text-lg sm:w-5/6">
           What started as a digital pivot back to familiar territory, became an
           opportunity to deeply understand how brands are born, nurtured and
@@ -207,14 +233,14 @@ export const Solutions = () => {
       </div>
 
       {/* Carousel Section */}
-      <div className="bg-[#0A001F] text-white h-screen xl:h-[130vh]">
-        <div className="relative w-full h-screen xl:h-[130vh]">
-          <Slider {...settings} className="w-full h-screen xl:h-[130vh]">
+      <div className="bg-[#00010b] text-white h-[80vh] sm:h-[95vh] min-[1025px]:h-[113vh]">
+        <div className="relative w-full h-[80vh] sm:h-[95vh] min-[1025px]:h-[113vh]">
+          <Slider {...settings} className="w-full h-[80vh] sm:h-[95vh] min-[1025px]:h-full">
             {imageData.map((image, index) => (
-              <div key={index} className="relative w-full h-screen xl:h-[130vh]">
+              <div key={index} className="relative h-full">
                 {/* Desktop Background */}
                 <div
-                  className="w-full h-screen xl:h-[130vh] bg-cover bg-center hidden lg:block"
+                  className="w-full h-screen bg-cover bg-center rounded-2xl hidden min-[1025px]:block"
                   style={{
                     backgroundImage: `url(${image.background})`,
                   }}
@@ -222,37 +248,45 @@ export const Solutions = () => {
 
                 {/* Mobile Background */}
                 <div
-                  className="w-full h-screen bg-cover bg-center block lg:hidden"
+                  className="w-full h-[70vh] sm:h-[85vh] rounded-2xl bg-cover bg-center block min-[1025px]:hidden"
                   style={{
                     backgroundImage: `url(${image.backgroundMobile})`,
                   }}
                 ></div>
 
                 {/* Overlay */}
-                <div className="absolute bg-black bg-opacity-50"></div>
+                <div className="absolute top-0 left-0 w-full h-full"></div>
 
                 {/* Dynamic Content */}
-                <div className="absolute bottom-20 left-5 lg:left-10 text-white">
+                <div className="absolute bottom-7 lg:bottom-20 left-5 lg:left-10 text-white">
                   {/* Dynamic Logo */}
-                  <img src={image.logo} alt={`${image.title} Logo`} className="mb-5 w-24 h-auto" />
-                  <h2 className="uppercase bold sm:text-lg text-sm">{image.title}</h2>
+                  <img
+                    src={image.logo}
+                    alt={`${image.title} Logo`}
+                    className="mb-5 w-24 h-auto"
+                  />
+                  <h2 className="uppercase bold sm:text-lg text-sm">
+                    {image.title}
+                  </h2>
                   <p className="mt-2 text-xs sm:text-xl light w-2/3">
                     {image.description}
                   </p>
                 </div>
 
-                {/* View Case Study Button */}
-                {/* <button className="absolute hidden sm:block bottom-20 lg:bottom-24 sm:right-5 lg:right-10 border-2 light text-[#ffffff] mt-4 sm:mt-7 px-10 py-4 rounded-tl-xl rounded-br-xl border-[#ffffff] hover:bg-[#3D155D] hover:text-white transition-colors">
+                {/* View Case Study Button (Optional) */}
+                {/* Uncomment if needed
+                <button className="absolute hidden sm:block bottom-20 lg:bottom-24 sm:right-5 lg:right-10 border-2 light text-[#ffffff] mt-4 sm:mt-7 px-10 py-4 rounded-tl-xl rounded-br-xl border-[#ffffff] hover:bg-[#3D155D] hover:text-white transition-colors">
                   View Case Study
                 </button>
                 <button className="absolute block sm:hidden bottom-20 right-4 border-2 light text-[#ffffff] mt-4 px-6 py-4 rounded-tl-xl rounded-br-xl border-[#ffffff]">
                   {">"}
-                </button> */}
+                </button>
+                */}
               </div>
             ))}
           </Slider>
 
-          {/* Custom Styling for Dots */}
+          {/* Custom Styling for Dots and Additional Styles */}
           <style jsx>{`
             .custom-dots {
               position: absolute;
@@ -266,7 +300,7 @@ export const Solutions = () => {
             }
 
             .custom-dots li {
-              margin: 0 2px; /* Adjusted space between dots */
+              margin: 0 1px; /* Adjusted space between dots */
             }
 
             .custom-dots li button {
@@ -294,6 +328,20 @@ export const Solutions = () => {
               -webkit-box-orient: vertical;
               overflow: hidden;
               text-overflow: ellipsis;
+            }
+
+            /* Adjust Slide Container for Center Mode */
+            .slick-slide {
+              padding: 0 10px; /* Adjust padding as needed */
+            }
+
+            .slick-list {
+              margin: 0 -10px; /* Negative margin to counteract slide padding */
+            }
+
+            /* Ensure the slide takes full height */
+            .slick-slide > div {
+              height: 100%;
             }
           `}</style>
         </div>
