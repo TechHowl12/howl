@@ -52,7 +52,7 @@ export const Design = () => {
                        background: gradientBorder,
                        padding: "1px"
                      }}>
-                  <div className="w-full h-full bg-black rounded-tl-xl rounded-br-xl flex items-center justify-around hover:bg-[#3D155D] transition-colors">
+                  <div className="w-full h-full bg-black rounded-tl-xl rounded-br-xl flex items-center justify-around transition-colors">
                     <span className="text-white mr-4 text-[20px] bold">{card.title}</span>
                   </div>
                 </div>
@@ -61,19 +61,18 @@ export const Design = () => {
                        background: gradientBorder,
                        padding: "1px"
                      }}>
-                  <div className="w-full h-full bg-black rounded-tl-xl rounded-br-xl flex items-center justify-center hover:bg-[#3D155D] transition-colors">
+                  <div className="w-full h-full bg-black rounded-tl-xl rounded-br-xl flex items-center justify-center transition-colors">
                     <span className="text-white text-[40px] font-light">{card.number}</span>
                   </div>
                 </div>
               </div>
               
               {/* Bottom description */}
-              <div className="w-[278px] h-[104px] mb-4 rounded-tl-xl rounded-br-xl"
+              <div className="w-[278px] border-2 border-[#3D155D] h-[104px] mb-4 rounded-tl-xl rounded-br-xl"
                    style={{
-                     background: gradientBorder,
                      padding: "1px"
                    }}>
-                <div className="w-full h-full bg-black rounded-tl-xl rounded-br-xl flex items-center justify-center hover:bg-[#3D155D] transition-colors">
+                <div className="w-full h-full bg-black rounded-tl-xl rounded-br-xl flex items-center justify-center transition-colors">
                   <span className="text-white w-4/6 mr-10 reg text-sm px-4 text-left">{card.description}</span>
                 </div>
               </div>

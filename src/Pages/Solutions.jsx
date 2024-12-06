@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -35,8 +35,12 @@ import dbsbanklogo from "../assets/dbsbanklogo.png";
 import dbsmobilebg from "../assets/dbsmobilebg.png";
 import next from "../assets/Next.png";
 import prev from "../assets/Previous.png";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-// Slide data with mobile backgrounds
+gsap.registerPlugin(ScrollTrigger);
+
+
 const imageData = [
   {
     background: bseBackground,
@@ -141,17 +145,44 @@ const PrevArrow = ({ onClick }) => (
 );
 
 export const Solutions = () => {
+
+  const sliderRef = useRef(null);
+  const sliderContainerRef = useRef(null);
+
+  useEffect(() => {
+    let slider = sliderRef.current;
+
+    // Initialize GSAP ScrollTrigger
+    ScrollTrigger.create({
+      trigger: sliderContainerRef.current, // The section to monitor
+      start: "top 80%", // When the top of the section enters 80% of the viewport
+      end: "bottom 20%", // When the bottom of the section is at 20% of the viewport
+      onEnter: () => {
+        slider.slickPlay(); // Start autoplay
+      },
+      onLeave: () => {
+        slider.slickPause(); // Pause autoplay when out of viewport
+      },
+      onEnterBack: () => {
+        slider.slickPlay(); // Resume autoplay when re-entering
+      },
+      onLeaveBack: () => {
+        slider.slickPause(); // Pause autoplay when scrolling up and leaving
+      },
+    });
+  }, []);
+
   const settings = {
     dots: true,
     infinite: true,
-    autoplay: true,
+    autoplay: false,
     speed: 600,
     slidesToShow: 1, // Show one slide at a time
     slidesToScroll: 1,
     autoplaySpeed: 3000,
     pauseOnHover: false,
     centerMode: true, // Enable center mode
-    centerPadding: "7%", // Show 5% of the adjacent slides
+    centerPadding: "12%", // Show 5% of the adjacent slides
     nextArrow: <NextArrow />, // Custom Next Arrow
     prevArrow: <PrevArrow />, // Custom Previous Arrow
     dotsClass: "slick-dots custom-dots",
@@ -200,7 +231,7 @@ export const Solutions = () => {
             OVER SCOPE
           </h1>
           <button
-            className="border-2 light w-1/3 py-4 rounded-tl-xl rounded-br-xl border-[#ffffff] hover:bg-[#3D155D] hover:text-white transition-colors"
+            className="border-2 light w-1/3 py-4 rounded-tl-xl rounded-br-xl border-[#ffffff] hover:text-white transition-colors"
             onClick={() =>
               window.open(
                 "https://docs.google.com/presentation/d/1Fg0MCOv2U0cTgglORiWvv7fUwSAvcbvLKd38mNIkgrw/edit#slide=id.g2f3eaea9b21_0_0",
@@ -227,20 +258,27 @@ export const Solutions = () => {
           successfully operated across digital media. We use these compounding
           learnings to continue scaling brands, and even start our own.
         </p>
-        <button className="border-2 light w-1/2 py-4 rounded-tl-xl rounded-br-xl border-white mt-8 hover:bg-[#3D155D] hover:text-white transition-colors">
+        <button className="border-2 light w-1/2 py-4 rounded-tl-xl rounded-br-xl border-white mt-8 hover:text-white transition-colors">
           View Our Portfolio
         </button>
       </div>
 
       {/* Carousel Section */}
-      <div className="bg-[#00010b] text-white h-[80vh] sm:h-[95vh] min-[1025px]:h-[113vh]">
-        <div className="relative w-full h-[80vh] sm:h-[95vh] min-[1025px]:h-[113vh]">
-          <Slider {...settings} className="w-full h-[80vh] sm:h-[95vh] min-[1025px]:h-full">
+      <div
+        ref={sliderContainerRef}
+        className="bg-[#00010b] text-white h-[80vh] sm:h-[95vh] min-[1025px]:h-[100vh]"
+      >
+        <div className="relative w-full h-[80vh] sm:h-[95vh] min-[1025px]:h-[100vh]">
+          <Slider
+            ref={sliderRef}
+            {...settings}
+            className="w-full h-[80vh] sm:h-[95vh] min-[1025px]:h-[100vh]"
+          >
             {imageData.map((image, index) => (
               <div key={index} className="relative h-full">
                 {/* Desktop Background */}
                 <div
-                  className="w-full h-screen bg-cover bg-center rounded-2xl hidden min-[1025px]:block"
+                  className="w-auto mx-auto h-[90vh] bg-cover bg-no-repeat bg-center rounded-2xl hidden min-[1025px]:block"
                   style={{
                     backgroundImage: `url(${image.background})`,
                   }}
@@ -255,7 +293,7 @@ export const Solutions = () => {
                 ></div>
 
                 {/* Overlay */}
-                <div className="absolute top-0 left-0 w-full h-full"></div>
+                {/* <div className="absolute top-0 left-0 w-full h-full"></div> */}
 
                 {/* Dynamic Content */}
                 <div className="absolute bottom-7 lg:bottom-20 left-5 lg:left-10 text-white">
@@ -290,7 +328,7 @@ export const Solutions = () => {
           <style jsx>{`
             .custom-dots {
               position: absolute;
-              bottom: 20px; /* Adjusted position to reduce space */
+              bottom: 17px; /* Adjusted position to reduce space */
               display: flex !important;
               justify-content: center;
               width: 100%;
