@@ -4,13 +4,13 @@ import Logo from "../assets/logo-nav.png";
 export const Header = () => {
   // State to manage mobile menu visibility
   const [isOpen, setIsOpen] = useState(false);
-  
+
   // State to manage header visibility based on scroll
   const [isVisible, setIsVisible] = useState(true);
-  
+
   // State to track the last scroll position
   const [lastScrollY, setLastScrollY] = useState(0);
-  
+
   // State to track which link is currently hovered
   const [hoveredLink, setHoveredLink] = useState(null);
 
@@ -26,25 +26,24 @@ export const Header = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-    
+
     // Cleanup on component unmount
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
   // Define navigation links
   const navLinks = [
-    { name: "Work", href: "https://pages.howl.in/work/" },
-    { name: "About", href: "https://pages.howl.in/about/" },
-    { name: "Careers", href: "https://pages.howl.in/careers/" },
-    { name: "Contact", href: "https://pages.howl.in/contact/" },
+    { name: "Work", href: "http://howl.in/work" },
+    { name: "About", href: "http://howl.in/about" },
+    { name: "Careers", href: "http://howl.in/careers" },
+    { name: "Contact", href: "http://howl.in/contact" }
   ];
 
   return (
     <>
       <nav
-        className={`bg-transparent fixed pt-6 px-2 sm:pt-6 xl:pt-10 top-0 left-0 w-full z-50 transition-transform duration-300 ${
-          isVisible ? "translate-y-0" : "-translate-y-full"
-        }`}
+        className={`bg-transparent fixed pt-6 px-2 sm:pt-6 xl:pt-10 top-0 left-0 w-full z-50 transition-transform duration-300 ${isVisible ? "translate-y-0" : "-translate-y-full"
+          }`}
       >
         <div className="lg:mx-6 xl:mx-10 2xl:mx-14 p-5">
           <div className="flex items-center justify-between">
@@ -63,13 +62,12 @@ export const Header = () => {
                     target='_blank'
                     onMouseEnter={() => setHoveredLink(link.name)}
                     onMouseLeave={() => setHoveredLink(null)}
-                    className={`px-3 py-2 rounded-md text-lg font-bold transition-all duration-300 hover:bg-primary-foreground ${
-                      hoveredLink === link.name
+                    className={`px-3 py-2 rounded-md text-lg font-bold transition-all duration-300 hover:bg-primary-foreground ${hoveredLink === link.name
                         ? "scale-x-110"
                         : hoveredLink
-                        ? "opacity-30"
-                        : ""
-                    }`}
+                          ? "opacity-30"
+                          : ""
+                      }`}
                   >
                     {link.name}
                   </a>
@@ -81,9 +79,8 @@ export const Header = () => {
             <div className="md:hidden">
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className={`inline-flex items-center justify-center z-50 ${
-                  isOpen ? "hidden" : ""
-                }`}
+                className={`inline-flex items-center justify-center z-50 ${isOpen ? "hidden" : ""
+                  }`}
                 aria-expanded={isOpen}
                 aria-label="Toggle menu"
               >
@@ -110,9 +107,8 @@ export const Header = () => {
 
         {/* Mobile Menu */}
         <div
-          className={`fixed top-0 right-0 h-[100vh] w-full flex justify-start items-end text-black uppercase bg-[#fff] opacity-[95%] z-40 transform ${
-            isOpen ? "translate-x-0" : "translate-x-full"
-          } transition-transform duration-300 ease-in-out md:hidden`}
+          className={`fixed top-0 right-0 h-[100vh] w-full flex justify-start items-end text-black uppercase bg-[#fff] opacity-[95%] z-40 transform ${isOpen ? "translate-x-0" : "translate-x-full"
+            } transition-transform duration-300 ease-in-out md:hidden`}
         >
           {/* Close Button */}
           <button
@@ -138,28 +134,28 @@ export const Header = () => {
           {/* Mobile Navigation Links */}
           <div className="px-2 pb-3 space-y-1 sm:px-3">
             <a
-              href="https://pages.howl.in/work/"
+              href="http://howl.in/work"
               target="_blank"
               className="block px-3 py-4 rounded-md text-5xl bold font-medium hover:bg-primary-foreground hover:text-primary"
             >
               Work
             </a>
             <a
-              href="https://pages.howl.in/about/"
+              href="http://howl.in/about"
               target="_blank"
               className="block px-3 py-6 rounded-md text-5xl bold font-medium hover:bg-primary-foreground hover:text-primary"
             >
               About
             </a>
             <a
-              href="https://pages.howl.in/careers/"
+              href="http://howl.in/careers"
               target="_blank"
               className="block px-3 py-6 rounded-md text-5xl bold font-medium hover:bg-primary-foreground hover:text-primary"
             >
               Careers
             </a>
             <a
-              href="https://pages.howl.in/contact/"
+              href="http://howl.in/contact"
               target="_blank"
               className="block px-3 py-6 rounded-md text-5xl bold font-medium hover:bg-primary-foreground hover:text-primary"
             >
