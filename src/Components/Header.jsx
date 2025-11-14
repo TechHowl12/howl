@@ -33,10 +33,10 @@ export const Header = () => {
 
   // Define navigation links
   const navLinks = [
-    { name: "Work", href: "http://howl.in/work" },
-    { name: "About", href: "http://howl.in/about" },
-    { name: "Careers", href: "http://howl.in/careers" },
-    { name: "Contact", href: "http://howl.in/contact" }
+    { name: "Work", href: "https://howl.in/work" },
+    { name: "About", href: "https://howl.in/about" },
+    { name: "Careers", href: "https://howl.in/careers" },
+    { name: "Contact", href: "https://howl.in/contact" }
   ];
 
   return (
@@ -134,28 +134,28 @@ export const Header = () => {
           {/* Mobile Navigation Links */}
           <div className="px-2 pb-3 space-y-1 sm:px-3">
             <a
-              href="http://howl.in/work"
+              href="https://howl.in/work"
               target="_blank"
               className="block px-3 py-4 rounded-md text-5xl bold font-medium hover:bg-primary-foreground hover:text-primary"
             >
               Work
             </a>
             <a
-              href="http://howl.in/about"
+              href="https://howl.in/about"
               target="_blank"
               className="block px-3 py-6 rounded-md text-5xl bold font-medium hover:bg-primary-foreground hover:text-primary"
             >
               About
             </a>
             <a
-              href="http://howl.in/careers"
+              href="https://howl.in/careers"
               target="_blank"
               className="block px-3 py-6 rounded-md text-5xl bold font-medium hover:bg-primary-foreground hover:text-primary"
             >
               Careers
             </a>
             <a
-              href="http://howl.in/contact"
+              href="https://howl.in/contact"
               target="_blank"
               className="block px-3 py-6 rounded-md text-5xl bold font-medium hover:bg-primary-foreground hover:text-primary"
             >

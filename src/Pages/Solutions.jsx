@@ -49,14 +49,14 @@ const imageData = [
     description:
       "Initiating investor communities to develop a more consumer-centric brand narrative.",
   },
-  {
-    background: asianbg,
-    backgroundMobile: asianpaintsmobile,
-    logo: asianlogo,
-    title: "CONSTRUCTION & ENGINEERING",
-    description:
-      "Digitally converting an otherwise unattainable audience pool in the U.A.E.",
-  },
+  // {
+  //   background: asianbg,
+  //   backgroundMobile: asianpaintsmobile,
+  //   logo: asianlogo,
+  //   title: "CONSTRUCTION & ENGINEERING",
+  //   description:
+  //     "Digitally converting an otherwise unattainable audience pool in the U.A.E.",
+  // },
   {
     background: baggitbg,
     backgroundMobile: baggitmobile,

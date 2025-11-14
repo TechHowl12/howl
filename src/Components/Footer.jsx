@@ -15,28 +15,28 @@ const Footer = () => {
           
           <div className="flex flex-col xl:flex-row items-center gap-y-4 gap-x-20 text-sm">
     <a 
-        href="https://pages.howl.in/work/" 
+        href="https://howl.in/work" 
         target='_blank'
         className="hover:text-gray-600  transition-colors duration-200"
     >
         Work
     </a>
     <a 
-        href="https://pages.howl.in/about/" 
+        href="https://howl.in/about" 
         target='_blank'
         className="hover:text-gray-600 transition-colors duration-200"
     >
         About
     </a>
     <a 
-        href="https://pages.howl.in/careers/" 
+        href="https://howl.in/careers" 
         target='_blank'
         className="hover:text-gray-600 transition-colors duration-200"
     >
         Careers
     </a>
     <a 
-        href="https://pages.howl.in/contact/" 
+        href="https://howl.in/contact" 
         target='_blank'
         className="hover:text-gray-600 transition-colors duration-200"
     >

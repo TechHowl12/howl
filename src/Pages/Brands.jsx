@@ -1,10 +1,10 @@
 import React from "react";
 import HRX from "../assets/hrx-new-brands-img.png";
 import Amex from "../assets/amex-new-brands-img.png";
-import Schindler from "../assets/schindler-new-brands-img.png";
+import AP from "../assets/asian-paint-bg.jpg";
 import HRXLogo from "../assets/hrx logo 1.png"; // Logo for the first card
 import AmexLogo from "../assets/am ex white logo 1.png"; // Logo for the second card
-import SchindlerLogo from "../assets/white logo-02 1.png"; // Logo for the third card
+import APLogo from "../assets/asian-paint-bw.png"; // Logo for the third card
 
 export const Brands = () => {
   const gradientBorder =
@@ -68,28 +68,26 @@ export const Brands = () => {
           <div className="w-full h-full bg-[#0A001F] rounded-xl flex flex-col items-center">
             {/* Main Image */}
             <img
-              src={Schindler}
-              alt="Schindler"
-              className="mt-6"
+              src={AP}
+              alt="Asian Paints"
+              className="mt-6 object-cover rounded-xl"
               style={{ width: "297.4px", height: "390px" }}
             />
             {/* Logo Image */}
-            <img src={SchindlerLogo} alt="Schindler Logo" className="mt-8" />
+            <img src={APLogo} alt="Schindler Logo" className="mt-14 w-32" />
             {/* Content */}
-            <div className="text-center mt-4 px-4">
+            <div className="text-center mt-7 px-4">
               <h3
                 className="text-[#FCF5FF] text-center text-sm font-bold mb-2"
                 style={{ fontFamily: "Hovesbold" }}
               >
-                Building Ad Funnels That <br /> Sold Elevators Online
+                Digitally Converting An Otherwise<br /> Unattainable Audience Pool
               </h3>
               <p
                 className="text-[#FCF5FF] text-xs mb-4"
                 style={{ fontFamily: "Hoves-light" }}
               >
-                Highly segregated audience funnels went on to set a global
-                benchmark from a digital opportunity created for a legacy brand
-                to continue changing how the world moves.
+                Highly segregated audience funnels went on to set a global benchmark from a digital opportunity created for a legacy brand to continue changing how the world expresses itself.
               </p>
             </div>
           </div>
@@ -117,7 +115,7 @@ export const Brands = () => {
             {/* Logo Image */}
             <img src={AmexLogo} alt="American Express Logo" className="mt-14" />
             {/* Content */}
-            <div className="text-center mt-4 px-4">
+            <div className="text-center mt-5 px-4">
               <h3
                 className="text-[#FCF5FF] text-center text-sm font-bold mb-2"
                 style={{ fontFamily: "Hovesbold" }}
